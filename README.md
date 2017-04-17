@@ -32,51 +32,54 @@ The application makes the following assumptions:
 - The application runs a series of automated test using JUnit when the application is compiled and packaged.
 
 ## User Stories and Acceptance Criteria:
-User Story 1: As an HR Manager, I want to load all employee pay details from a source, so that this information can be used to generate payslips 
+#### User Story 1: 
+As an HR Manager, I want to load all employee pay details from a source, so that this information can be used to generate payslips 
 and sent to employees.
 
-AC1:
+##### AC1:
 Given: One or more employee pay details is stored to a file in JSON format
 When: The system loads the file in the specified format during startup
 Then: Employees payslips is generated to the specified output folder ("output\json\") in JSON format.
 
-AC2:
+``` AC2:
 Given: One or more employee pay details is stored to a file in JSON format
 When: The system cannot find the specified input location during startup
 Then: A system error is thrown during startup stating it cannot find the file for the given location and terminate.
 
-AC3:
+``` AC3:
 Given: One or more employee pay details is stored to a file in JSON format
 When: The employee pay details are missing (either, Annual Salary is not specified and not numeric or Super Rate is null or not between 0 - 50 incl.) 
 Then: A business validation is thrown during startup stating the validation error and terminate.
 
-User Story 1: As an HR Manager, I want to calculate Taxable Income for different income thresholds, so that this information can be used to generate employee payslip.
+#### User Story 2: 
+As an HR Manager, I want to calculate Taxable Income for different income thresholds, so that this information can be used to generate employee payslip.
 
-AC1: 
+```AC1: 
 Given: A taxable income is calculated for lowest income threshold
 When: Annual Income is equal to or below the taxable income threshold
 Then: Income Tax calculated should be zero (e.g. 0 - $18,200 Nil)
 
-AC2: 
+```AC2: 
 Given: A taxable income is calculated for highest income threshold
 When: Annual Income is equal to or above the taxable income threshold
 Then: Income Tax calculated should be calculated based on the criteria of highest taxable income (e.g. $54,547 plus 45c for each $1 over $180,000). 
 
-AC3: 
+```AC3: 
 Given: A taxable income is calculated between lower and higher income threshold
 When: Annual Income is between the higer and lower taxable income threshold
 Then: Income Tax calculated should be calculated based on the taxable income that meets the criteria from the list. (e.g. $17,547 plus 37c for each $1 over $80,000).
 
 
-User Story 3: As an Employee, I want to input my pay details, so that i can view my payslip
+#### User Story 3: 
+As an Employee, I want to input my pay details, so that i can view my payslip
 
-AC1: 
+```AC1: 
 Given: A Employee pay details entered
 When:  Employee first name (optional), last name (optional), pay start date (if null current month taken),
 annual salary (required), and super rate (required) is received
 Then: The employee payslip is generated and displayed.
 
-AC2: 
+```AC2: 
 Given: A Employee pay details entered
 When:  Employee Annual salary is not positive or null
 Then: A validation error is displayed saying the annual salary has to be a positive value.
@@ -88,7 +91,7 @@ Then: A validation error is displayed saying the Super Rate has to be within the
 
 ## Running the Payroll Java Application:
 
-The payroll application is bundled as a maven project and the entire application can be run from the command prompt. 
+The payroll application is bundled as a java maven project and the entire application can be run from the CLI. 
 
 ### Pre-requisites
 
