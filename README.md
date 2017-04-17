@@ -119,9 +119,9 @@ The application runs on the CLI as an embedded tomcat container on port *11222*.
 2. Setup java home to the PATH environment variable.
 3. To verify if Java 8 is installed, run ```java -version``` at the command prompt. It should display the version.
 4. Download and extract the the Source code (**assignment-payroll-master.zip**) from the provided GitHub link.
-5. The application runs using external file locations to load employee pay details (input json file) and to generate payslips (output json file) at application start up. You will find _myob_ folder part of the application code under the root of the extracted zip (e.g. _assignment-payroll-master\myob\_). This folder contains the input and the output locations for files. The _input_ and _output_ folders will need to be pointed to the application during start up. 
+5. The application runs using external file locations to load employee pay details (input json file) and to generate payslips (output json file) at application start up. You will find _myob_ folder part of the application code under the root of the extracted zip (e.g. "assignment-payroll-master\myob\" directory). This folder contains the input and the output locations for files. The _input_ and _output_ folders will need to be pointed to the application during start up. 
 
-```NOTE: If you're looking to build the project, you may need to install maven, set the maven home and java home to the PATH environment variable .  ```
+>NOTE: If you're looking to build the project, you may need to install maven, set the maven home and java home to the PATH environment variable.
 
 ### Run the Application:
 
@@ -134,7 +134,7 @@ The application runs on the CLI as an embedded tomcat container on port *11222*.
 java -Djson.input.home=<path-to-the-input-json-folder> -Djson.output.home=<path-to-the-output-json-folder> -jar EmpPayroll-1.0.0.war
 ```
 
-Where **path-to-the-input-json-folder** and **path-to-the-output-json-folder** are paths to the external input json folder and output folder where the application loads the employee pay details and generates the payslips respectively (as per Pt. 5 in the ___Pre-requisites___ step above).
+>Where, **path-to-the-input-json-folder** and **path-to-the-output-json-folder** are paths to the external input json folder and output folder where the application loads the employee pay details and generates the payslips respectively (as per Pt. 5 in the ___Pre-requisites___ step above).
 
 E.g. Assuming the application is copied to _C:\code\assignment-payroll-master_ directory, *path-to-the-input-json-folder* = __C:\code\assignment-payroll-master\myob\input\json__ and *path-to-the-output-json-folder* = __C:\code\assignment-payroll-master\myob\output\json__
    
