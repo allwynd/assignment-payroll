@@ -134,9 +134,9 @@ The application runs on the CLI as an embedded tomcat container on port *11222*.
 java -Djson.input.home=<path-to-the-input-json-folder> -Djson.output.home=<path-to-the-output-json-folder> -jar EmpPayroll-1.0.0.war
 ```
 
->Where, **path-to-the-input-json-folder** and **path-to-the-output-json-folder** are paths to the external input json folder and output folder where the application loads the employee pay details and generates the payslips respectively (as per Pt. 5 in the ___Pre-requisites___ step above).
+Where, **path-to-the-input-json-folder** and **path-to-the-output-json-folder** are paths to the external input json folder and output folder where the application loads the employee pay details and generates the payslips respectively (as per Pt. 5 in the ___Pre-requisites___ step above).
 
-E.g. Assuming the application is copied to _C:\code\assignment-payroll-master_ directory, *path-to-the-input-json-folder* = __C:\code\assignment-payroll-master\myob\input\json__ and *path-to-the-output-json-folder* = __C:\code\assignment-payroll-master\myob\output\json__
+>Example: Assuming the application is extracted to _C:\code\assignment-payroll-master_ directory, *path-to-the-input-json-folder* = __C:\code\assignment-payroll-master\myob\input\json__ and *path-to-the-output-json-folder* = __C:\code\assignment-payroll-master\myob\output\json__
    
 4. You should see the application starting up displaying the Spring Boot log along with other application logging (without any errors).
 
