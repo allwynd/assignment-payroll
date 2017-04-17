@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,7 +50,7 @@ public class EmployeePayslipServiceImpl implements EmployeePayslipService {
 		
 		// validate input
 		EmpPayValidatorUtils.validateAnnualSalary(empBean.getAnnualSalary());
-		EmpPayValidatorUtils.validateAnnualSalary(empBean.getSuperRate());
+		EmpPayValidatorUtils.validateSuperRate(empBean.getSuperRate());
 
 		if (empBean.getPaymentStartDate() == null)
 			empBean.setPaymentStartDate(DateTime.now());

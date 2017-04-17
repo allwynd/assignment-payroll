@@ -1,6 +1,8 @@
 package  com.assignment.payroll.tax;
 
 /**
+ * Tax holder for taxable income.
+ * 
  * @author Allwyn
  *
  */
@@ -11,6 +13,13 @@ public final class TaxData
 	private final Float additionCent;
 	private final Double addition;
 	
+	/**
+	 * 
+	 * @param max Maximum income threshold
+	 * @param min Mininum income threshold
+	 * @param additionCent addition cents
+	 * @param addition	addition amount
+	 */
 	public TaxData(Double max, Double min, Float additionCent, Double addition) 
 	{
 		this.max = max;

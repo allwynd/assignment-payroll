@@ -36,7 +36,7 @@ public class PayeeTaxableIncome implements TaxableIncome
 		Map.Entry<Double,TaxData> entry = taxableIncome.ceilingEntry(amount);
 		if (entry == null) 
 		{
-		    throw new TaxCalculationException("The given value is to low. Cannot get a taxable value.");
+		    throw new TaxCalculationException("The given value is null. Cannot get a taxable value.");
 		} 
 		else if (amount <= entry.getValue().getMax()) 
 		{

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import com.assignment.payroll.generator.utils.CustomDateTimeModule;
 import com.assignment.payroll.view.payslip.EmpPayslip;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -93,11 +94,12 @@ public class EmployeePayslipRenderer implements PayslipRenderer
 			File file = new File(location + File.separator, fname + ".json");
 			fw = new FileWriter(file.getAbsoluteFile());
 			bw = new BufferedWriter(fw);
-			
-			ObjectMapper mapper = new ObjectMapper();
+			ObjectMapper mapper = new ObjectMapper();			
 			mapper.registerModule(new CustomDateTimeModule());
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			mapper.writer().withoutAttribute("payStartDate");
 			mapper.writeValue(bw, objectToWrite);
-			logger.info("*** Generated OUTPUT to: {}.json", location + fname);
+			logger.info("*** Generated OUTPUT to: {}.json", location + File.separator + fname);
 		} 
 		catch (Exception e) 
 		{

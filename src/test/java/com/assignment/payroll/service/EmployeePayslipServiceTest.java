@@ -83,6 +83,25 @@ public class EmployeePayslipServiceTest {
 		assertEmployeePayslipGenerated(empPayslip);	
 	}
 	
+	@Test(expected = DataValidationException.class)
+	public void shouldHandleWhenAnnualSalaryIsNotPositive() throws DataValidationException, TaxCalculationException, PayslipGeneratorException 
+	{
+		EmployeeBean empBean = new EmployeeBean();
+		empBean.setAnnualSalary(Double.valueOf(-10000)); // salary is negative value
+		empBean.setSuperRate(Float.valueOf(6));
+		employeePayslip.generatePayslip(empBean); // Expected validation error on annual salary 
+
+	}
+	
+	@Test(expected = DataValidationException.class)
+	public void shouldHandleWhenSuperRateIsNotInRange() throws DataValidationException, TaxCalculationException, PayslipGeneratorException 
+	{
+		EmployeeBean empBean = new EmployeeBean();
+		empBean.setAnnualSalary(Double.valueOf(10000));
+		empBean.setSuperRate(Float.valueOf(51)); //above the required range (0 and 50)
+		employeePayslip.generatePayslip(empBean); // Expected validation error on Super Rate
+	}	
+	
 	private void assertEmployeePayslipGenerated(EmpPayslip empPayslip) 
 	{
 		assertThat(empPayslip, 					is(notNullValue()));	
