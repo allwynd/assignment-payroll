@@ -1,0 +1,4 @@
+com\assignment\payroll\generator\data\loader\json\EmployeePayJSONDataFileLoaderTest.class
+com\assignment\payroll\service\EmployeePayslipServiceTest.class
+com\assignment\payroll\tax\payee\PayeeTaxableIncomeTest.class
+com\assignment\payroll\tax\payee\PayeeTaxCalculatorTest.class
