@@ -69,7 +69,9 @@ As an HR Manager, I want to calculate Taxable Income for different income thresh
 
 ##### AC2: 
 **Given**: A taxable income is calculated for highest income threshold
+
 **When**: Annual Income is equal to or above the taxable income threshold
+
 **Then**: Income Tax calculated should be calculated based on the criteria of highest taxable income (e.g. $54,547 plus 45c for each $1 over $180,000). 
 
 ##### AC3: 
@@ -117,13 +119,13 @@ The application runs on the CLI as an embedded tomcat container on port *11222*.
 2. Setup java home to the PATH environment variable.
 3. To verify if Java 8 is installed, run ```java -version``` at the command prompt. It should display the version.
 4. Download and extract the the Source code (**assignment-payroll-master.zip**) from the provided GitHub link.
-5. The application runs using external file locations to load employee pay details (input json file) and to generate payslips (output json file) at application start up. Copy the _myob_ folder from the root of the application folder (e.g. _	assignment-payroll-master\myob_). This folder contains the input and the output locations for files. This folder can be copied to any location where the application can be pointed during start up. 
+5. The application runs using external file locations to load employee pay details (input json file) and to generate payslips (output json file) at application start up. You will find _myob_ folder part of the application code under the root of the extracted zip (e.g. _assignment-payroll-master\myob\_). This folder contains the input and the output locations for files. The _input_ and _output_ folders will need to be pointed to the application during start up. 
 
 ```NOTE: If you're looking to build the project, you may need to install maven, set the maven home and java home to the PATH environment variable .  ```
 
 ### Run the Application:
 
-1. Open the command prompt and go the **target** folder of the extracted directory (e.g. under extracted folder _assignment-payroll-master\target_)
+1. Open the command prompt and go the **target** folder of the extracted directory (e.g. under extracted folder *assignment-payroll-master\target*)
 
 2. List out files under the **target** directory. Ensure, the __EmpPayroll-1.0.0.war__ exists.
 
@@ -133,8 +135,10 @@ java -Djson.input.home=<path-to-the-input-json-folder> -Djson.output.home=<path-
 ```
 
 Where **path-to-the-input-json-folder** and **path-to-the-output-json-folder** are paths to the external input json folder and output folder where the application loads the employee pay details and generates the payslips respectively (as per Pt. 5 in the ___Pre-requisites___ step above).
+
+E.g. Assuming the application is copied to _C:\code\assignment-payroll-master_ directory, *path-to-the-input-json-folder* = __C:\code\assignment-payroll-master\myob\input\json__ and *path-to-the-output-json-folder* = __C:\code\assignment-payroll-master\myob\output\json__
    
-4. You should see the application starting up displaying the Spring Boot log along with other application logging.
+4. You should see the application starting up displaying the Spring Boot log along with other application logging (without any errors).
 
 #### Bulk load Employee Pay Information
 - Once the application starts up successfully, the key information to look for in the logs is the location where the employee pay details input file is read and the generated employee payslip to the output folder as configured during startup. To verify, you can locate *emppayslip.json* file under the **myob\output\json** folder. 
