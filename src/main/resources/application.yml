@@ -1,15 +1,3 @@
 server:
   port: 11222
   contextPath: /EmpPayroll
-  
-environments:
-    dev:
-spring.datasource.url: jdbc:mysql://localhost/test
-spring.datasource.username: dbuser
-spring.datasource.password: dbpass
-spring.datasource.driver-class-name: com.mysql.jdbc.Driver
-    prod:
-spring.datasource.url: jdbc:mysql://localhost/test
-spring.datasource.username: dbuser
-spring.datasource.password: dbpass
-spring.datasource.driver-class-name: com.mysql.jdbc.Driver
