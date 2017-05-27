@@ -28,7 +28,7 @@ The application makes the following assumptions:
 - User Date input in MMM-YYYY (e.g. dec-2016, December-2016 or DEC-2016 are valid inputs. 2015-Dec or 12-2015 is not valid)
 - Output files - Payslip is generated in JSON format (for bulk load) to the output directory specified at the time of start up ("output/json/emppayslip.json). 
 - The taxable income data sheet is currently is stored in code and statically loaded in-memory to keep it simple and faster access. However it can be re-factored to load from other means with minimal code changes.
-- The Employee Payroll application is designed, built and tested based on a set of predefined User stories and Acceptance Criteria (see below). 
+- The Employee Payroll application is designed, built and tested based on a set of predefined User stories and Acceptance Criteria. 
 - The application runs a series of automated test using JUnit when the application is compiled and packaged.
 
 ## User Stories and Acceptance Criteria:
@@ -175,6 +175,7 @@ Allwyn
 2017-04-17 22:42:57.425  INFO 6596 --- [           main] com.assignment.EmpPayrollApiApp          : Enter Last Name:
 D'souza
 2017-04-17 22:43:00.063  INFO 6596 --- [           main] com.assignment.EmpPayrollApiApp          : Enter Payment Start Date (e.g. Feb-2017). If left blank, assumes current Month:
+
 
 2017-04-17 22:43:03.272  INFO 6596 --- [           main] com.assignment.EmpPayrollApiApp          : Enter Annual Salary:
 75000
